@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push to a new branch
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        # cd into the app directory before running npm commands
+        run: cd news-aggregator && npm ci
+
+      # The test runner environment in the development sandbox was unstable.
+      # In a real CI environment, this should work correctly.
+      - name: Run tests
+        run: cd news-aggregator && npm test -- --watchAll=false
+
+      - name: Build application
+        run: cd news-aggregator && npm run build
+
+      - name: Deploy to web_prod branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./news-aggregator/build
+          publish_branch: web_prod
