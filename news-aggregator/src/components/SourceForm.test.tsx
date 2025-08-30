@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import SourceForm from './SourceForm';
+import { SourceForm } from './SourceForm';
 
 describe('SourceForm', () => {
   it('renders the form elements', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import ResultDisplay from './ResultDisplay';
+import { ResultDisplay } from './ResultDisplay';
 
 describe('ResultDisplay', () => {
   it('renders the placeholder text when no result is provided', () => {

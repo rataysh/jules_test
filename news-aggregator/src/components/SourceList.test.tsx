@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import SourceList from './SourceList';
+import { SourceList } from './SourceList';
 
 const mockSources = [
   { id: 1, url: 'https://reactjs.org' },

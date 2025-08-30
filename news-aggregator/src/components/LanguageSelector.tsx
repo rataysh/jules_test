@@ -6,7 +6,7 @@ interface LanguageSelectorProps {
   onLanguageChange: (language: string) => void;
 }
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ language, onLanguageChange }) => {
+export function LanguageSelector({ language, onLanguageChange }: LanguageSelectorProps) {
   return (
     <FormControl fullWidth>
       <InputLabel id="language-select-label">Language</InputLabel>
@@ -26,5 +26,3 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ language, onLanguag
     </FormControl>
   );
 };
-
-export default LanguageSelector;

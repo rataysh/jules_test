@@ -5,7 +5,7 @@ interface ResultDisplayProps {
   result: string;
 }
 
-const ResultDisplay: React.FC<ResultDisplayProps> = ({ result }) => {
+export function ResultDisplay({ result }: ResultDisplayProps) {
   return (
     <Paper elevation={3} sx={{ p: 2, mt: 2, minHeight: '100px' }}>
       <Typography variant="h6" gutterBottom>
@@ -17,5 +17,3 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ result }) => {
     </Paper>
   );
 };
-
-export default ResultDisplay;

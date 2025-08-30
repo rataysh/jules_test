@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, CircularProgress, Typography } from '@mui/material';
 
-const LoadingAnimation = () => {
+export function LoadingAnimation() {
   return (
     <Box
       sx={{
@@ -17,5 +17,3 @@ const LoadingAnimation = () => {
     </Box>
   );
 };
-
-export default LoadingAnimation;

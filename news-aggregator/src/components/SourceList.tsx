@@ -12,7 +12,7 @@ interface SourceListProps {
   onDelete: (id: number) => void;
 }
 
-const SourceList: React.FC<SourceListProps> = ({ sources, onDelete }) => {
+export function SourceList({ sources, onDelete }: SourceListProps) {
   return (
     <List>
       {sources.map((source) => (
@@ -30,5 +30,3 @@ const SourceList: React.FC<SourceListProps> = ({ sources, onDelete }) => {
     </List>
   );
 };
-
-export default SourceList;

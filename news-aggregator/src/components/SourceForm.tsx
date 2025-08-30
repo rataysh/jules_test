@@ -5,7 +5,7 @@ interface SourceFormProps {
   onAdd: (url: string) => void;
 }
 
-const SourceForm: React.FC<SourceFormProps> = ({ onAdd }) => {
+export function SourceForm({ onAdd }: SourceFormProps) {
   const [url, setUrl] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -28,5 +28,3 @@ const SourceForm: React.FC<SourceFormProps> = ({ onAdd }) => {
     </Box>
   );
 };
-
-export default SourceForm;
