@@ -73,19 +73,19 @@ function App() {
             News Aggregator
           </Typography>
           <Grid container spacing={4}>
-            <Grid item xs={12}>
+            <Grid xs={12}>
               <Typography variant="h6" gutterBottom>Add a new source</Typography>
               <SourceForm onAdd={handleAddSource} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid xs={12}>
               <Typography variant="h6" gutterBottom>Sources</Typography>
               <SourceList sources={sources} onDelete={handleDeleteSource} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid xs={12}>
               <Typography variant="h6" gutterBottom>Language</Typography>
               <LanguageSelector language={language} onLanguageChange={setLanguage} />
             </Grid>
-            <Grid item xs={12} sx={{ mt: 2 }}>
+            <Grid xs={12} sx={{ mt: 2 }}>
               <Button
                 variant="contained"
                 color="primary"
@@ -97,7 +97,7 @@ function App() {
                 Generate News
               </Button>
             </Grid>
-            <Grid item xs={12}>
+            <Grid xs={12}>
               {loading ? <LoadingAnimation /> : <ResultDisplay result={result} />}
             </Grid>
           </Grid>
