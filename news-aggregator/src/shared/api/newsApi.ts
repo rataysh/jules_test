@@ -1,7 +1,4 @@
-interface Source {
-  id: number;
-  url: string;
-}
+import { Source } from '../../domain/entities/source';
 
 const mockNewsData = [
   {

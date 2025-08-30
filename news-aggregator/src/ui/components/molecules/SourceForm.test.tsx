@@ -8,7 +8,7 @@ describe('SourceForm', () => {
     const handleAdd = jest.fn();
     render(<SourceForm onAdd={handleAdd} />);
 
-    expect(screen.getByLabelText(/new source url/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/new source url/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /add/i })).toBeInTheDocument();
   });
 
@@ -16,7 +16,7 @@ describe('SourceForm', () => {
     const handleAdd = jest.fn();
     render(<SourceForm onAdd={handleAdd} />);
 
-    const input = screen.getByLabelText(/new source url/i) as HTMLInputElement;
+    const input = screen.getByPlaceholderText(/new source url/i) as HTMLInputElement;
     fireEvent.change(input, { target: { value: 'https://example.com' } });
 
     expect(input.value).toBe('https://example.com');
@@ -26,7 +26,7 @@ describe('SourceForm', () => {
     const handleAdd = jest.fn();
     render(<SourceForm onAdd={handleAdd} />);
 
-    const input = screen.getByLabelText(/new source url/i);
+    const input = screen.getByPlaceholderText(/new source url/i);
     const button = screen.getByRole('button', { name: /add/i });
 
     fireEvent.change(input, { target: { value: 'https://example.com' } });
@@ -50,7 +50,7 @@ describe('SourceForm', () => {
     const handleAdd = jest.fn();
     render(<SourceForm onAdd={handleAdd} />);
 
-    const input = screen.getByLabelText(/new source url/i) as HTMLInputElement;
+    const input = screen.getByPlaceholderText(/new source url/i) as HTMLInputElement;
     const button = screen.getByRole('button', { name: /add/i });
 
     fireEvent.change(input, { target: { value: 'https://example.com' } });

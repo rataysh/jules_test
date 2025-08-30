@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box } from '@mui/material';
+import { Button } from '../atoms/Button';
+import { Input } from '../atoms/Input';
 
 interface SourceFormProps {
   onAdd: (url: string) => void;
@@ -16,15 +17,15 @@ export function SourceForm({ onAdd }: SourceFormProps) {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', gap: 2 }}>
-      <TextField
-        label="New Source URL"
-        variant="outlined"
-        fullWidth
+    <form onSubmit={handleSubmit} className="flex gap-2">
+      <Input
+        type="text"
+        placeholder="New Source URL"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
+        className="flex-grow"
       />
-      <Button type="submit" variant="contained">Add</Button>
-    </Box>
+      <Button type="submit">Add</Button>
+    </form>
   );
-};
+}

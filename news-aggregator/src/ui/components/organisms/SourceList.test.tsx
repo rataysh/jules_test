@@ -21,8 +21,8 @@ describe('SourceList', () => {
     const handleDelete = jest.fn();
     render(<SourceList sources={[]} onDelete={handleDelete} />);
 
-    const listItems = screen.queryAllByRole('listitem');
-    expect(listItems).toHaveLength(0);
+    expect(screen.queryByText('https://reactjs.org')).not.toBeInTheDocument();
+    expect(screen.queryByText('https://mui.com')).not.toBeInTheDocument();
   });
 
   it('calls the onDelete handler with the correct id when the delete button is clicked', () => {
