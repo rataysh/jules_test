@@ -14,7 +14,7 @@ export function LanguageSelector({ language, onLanguageChange }: LanguageSelecto
         labelId="language-select-label"
         id="language-select"
         value={language}
-        label="Language"
+        label="Language Select"
         onChange={(e) => onLanguageChange(e.target.value)}
       >
         <MenuItem value="en">English</MenuItem>
