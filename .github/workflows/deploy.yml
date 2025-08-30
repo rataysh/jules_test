@@ -20,11 +20,8 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        # cd into the app directory before running npm commands
         run: cd news-aggregator && npm ci
 
-      # The test runner environment in the development sandbox was unstable.
-      # In a real CI environment, this should work correctly.
       - name: Run tests
         run: cd news-aggregator && npm test -- --watchAll=false
 
